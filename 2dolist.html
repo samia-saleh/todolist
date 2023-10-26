@@ -109,6 +109,7 @@
     CLEAR ALL TASKS
   </button>
     <script>
+        let stat=true
          $(function(){
             $('button').eq(0).click(function(){
             $('label').eq(1).css('display','none') 
@@ -136,7 +137,17 @@
             
             })
             $('a').click(function(){
-                $(this).css('text-decoration', 'line-through')
+                if(stat){
+                    $(this).css('text-decoration', 'line-through')
+                    stat=false
+
+                }
+                else{
+                    $(this).css('text-decoration', 'none')
+                    stat=true
+
+                }
+               
 
             })  
             $('a').dblclick(function(){
